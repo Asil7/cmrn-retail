@@ -27,7 +27,7 @@ function App() {
           userSelect: "none",
         }}
       >
-        CMRN RETAIL
+        CMRN RETAIL LLC
       </header>
 
       {/* Main content with images */}
