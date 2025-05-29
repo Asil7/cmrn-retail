@@ -29,7 +29,7 @@ const dropdownMenu = (
     <Menu.Item key="fruits">
       <Link to="/products/fruits">Fruits</Link>
     </Menu.Item>
-    <Menu.Item key="vegetables">Sabzavotlar</Menu.Item>
+    <Menu.Item key="vegetables">Vegetables</Menu.Item>
   </Menu>
 );
 
