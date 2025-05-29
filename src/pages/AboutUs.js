@@ -1,13 +1,7 @@
 const AboutUs = () => {
   return (
     <div>
-      <h1>Welcome to Our Website</h1>
-      <p>
-        This is the AboutUs page where you can find the latest updates and news.
-      </p>
-      <p>
-        Explore our products and services to learn more about what we offer.
-      </p>
+      <h1>About Us</h1>
     </div>
   );
 };
