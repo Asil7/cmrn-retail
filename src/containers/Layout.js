@@ -95,7 +95,7 @@ export default function AppLayout({ children }) {
       </div>
 
       {/* Content */}
-      <Content style={{ padding: "20px" }}>{children}</Content>
+      <Content>{children}</Content>
     </Layout>
   );
 }
