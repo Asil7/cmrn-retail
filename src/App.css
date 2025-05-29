@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.ant-menu-light,
+.ant-menu-light > .ant-menu {
+  background: transparent;
+}
+
+.ant-menu-light .ant-menu-item a,
+.ant-menu-light > .ant-menu .ant-menu-item a,
+.ant-menu-light .ant-menu-item a:hover,
+.ant-menu-light > .ant-menu .ant-menu-item a:hover {
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
