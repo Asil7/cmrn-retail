@@ -1,5 +1,5 @@
 import { useLocation, Link } from "react-router-dom";
-import cherries from "../images/cherries.png";
+import apricotOrchard from "../images/apricotOrchard.png";
 import melons from "../images/melons.png";
 import fruit from "../images/fruit.png";
 import { Layout, Menu, Dropdown, Divider } from "antd";
@@ -10,13 +10,13 @@ const { Header, Content } = Layout;
 const getImageForPath = (path) => {
   switch (path) {
     case "/":
-      return cherries;
+      return apricotOrchard;
     case "/about":
       return melons;
     case "/products":
       return "/images/products.jpg";
     case "/contact":
-      return cherries;
+      return apricotOrchard;
     case "/products/fruits":
       return fruit;
     default:
@@ -39,14 +39,25 @@ export default function AppLayout({ children }) {
 
   return (
     <Layout>
-      {/* Header Image */}
       <div style={{ position: "relative" }}>
         <img
           src={headerImage}
           alt="Header"
           style={{ width: "100%", height: "500px", objectFit: "cover" }}
         />
-        {/* Navigation bar */}
+
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "500px",
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            zIndex: 1,
+            pointerEvents: "none",
+          }}
+        />
         <Header
           style={{
             position: "absolute",
@@ -54,7 +65,7 @@ export default function AppLayout({ children }) {
             width: "100%",
             backgroundColor: "rgba(255, 255, 255, 0.0)",
             display: "flex",
-            // alignItems: "center",
+            zIndex: 2,
             padding: "0 20px",
           }}
         >
@@ -80,7 +91,6 @@ export default function AppLayout({ children }) {
           </div>
         </Header>
 
-        {/* Optional Divider */}
         <Divider
           style={{
             position: "absolute",
@@ -94,7 +104,6 @@ export default function AppLayout({ children }) {
         </Divider>
       </div>
 
-      {/* Content */}
       <Content>{children}</Content>
     </Layout>
   );
