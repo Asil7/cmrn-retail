@@ -37,16 +37,33 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .ant-menu-light,
 .ant-menu-light > .ant-menu {
   background: transparent;
 }
 
 .ant-menu-light .ant-menu-item a,
-.ant-menu-light > .ant-menu .ant-menu-item a,
-.ant-menu-light .ant-menu-item a:hover,
-.ant-menu-light > .ant-menu .ant-menu-item a:hover {
+.ant-menu-light > .ant-menu .ant-menu-item a {
   color: #fff;
   font-weight: bold;
   font-size: 16px;
+  text-decoration: none;
+}
+
+.ant-menu-light .ant-menu-item:hover a,
+.ant-menu-light > .ant-menu .ant-menu-item:hover a {
+  color: #1890ff;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.ant-menu-horizontal > .ant-menu-item::after,
+.ant-menu-horizontal > .ant-menu-submenu::after {
+  border-bottom: none !important;
 }

@@ -16,7 +16,7 @@ const getImageForPath = (path) => {
     case "/products":
       return "/images/products.jpg";
     case "/contact":
-      return "/images/contact.jpg";
+      return cherries;
     case "/products/fruits":
       return fruit;
     default:

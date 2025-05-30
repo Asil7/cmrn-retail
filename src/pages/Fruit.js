@@ -21,7 +21,6 @@ const Fruit = () => {
                 width: 400,
                 height: 500,
                 backgroundColor: "#c2bbb0",
-                padding: 0,
               }}
               cover={
                 <div
@@ -34,7 +33,6 @@ const Fruit = () => {
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
-                      borderRadius: "8px 8px 0 0",
                     }}
                   />
                   {fruit.frame && (

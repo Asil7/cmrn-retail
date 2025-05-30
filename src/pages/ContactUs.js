@@ -1,14 +1,17 @@
+import Location from "../components/location/Location";
+import { Row, Col } from "antd";
+
 const ContactUs = () => {
   return (
-    <div>
-      <h1>Welcome to Our Website</h1>
-      <p>
-        This is the ContactUs page where you can find the latest updates and
-        news.
-      </p>
-      <p>
-        Explore our products and services to learn more about what we offer.
-      </p>
+    <div style={{ padding: "40px", backgroundColor: "#f2eadc" }}>
+      <Row gutter={[80, 24]} justify="center" style={{ maxWidth: "1500px" }}>
+        <Col>
+          <Location />
+        </Col>
+        <Col>
+          <div>Email</div>
+        </Col>
+      </Row>
     </div>
   );
 };
