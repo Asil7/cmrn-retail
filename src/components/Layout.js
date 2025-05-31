@@ -2,8 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import apricotOrchard from "../images/apricotOrchard.png";
 import melons from "../images/melons.png";
 import fruit from "../images/fruit.png";
-import { Layout, Menu, Dropdown, Divider } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { Layout, Menu, Divider } from "antd";
 
 const { Header, Content } = Layout;
 
@@ -14,7 +13,7 @@ const getImageForPath = (path) => {
     case "/about":
       return melons;
     case "/products":
-      return "/images/products.jpg";
+      return fruit;
     case "/contact":
       return apricotOrchard;
     case "/products/fruits":
@@ -24,14 +23,14 @@ const getImageForPath = (path) => {
   }
 };
 
-const dropdownMenu = (
-  <Menu>
-    <Menu.Item key="fruits">
-      <Link to="/products/fruits">Fruits</Link>
-    </Menu.Item>
-    <Menu.Item key="vegetables">Vegetables</Menu.Item>
-  </Menu>
-);
+// const dropdownMenu = (
+//   <Menu>
+//     <Menu.Item key="fruits">
+//       <Link to="/products/fruits">Fruits</Link>
+//     </Menu.Item>
+//     <Menu.Item key="vegetables">Vegetables</Menu.Item>
+//   </Menu>
+// );
 
 export default function AppLayout({ children }) {
   const location = useLocation();
@@ -77,12 +76,15 @@ export default function AppLayout({ children }) {
               <Menu.Item key="about">
                 <Link to="/about">About Us</Link>
               </Menu.Item>
-              <Menu.Item key="products">
+              {/* <Menu.Item key="products">
                 <Dropdown overlay={dropdownMenu} trigger={["click"]}>
                   <a onClick={(e) => e.preventDefault()}>
                     Products <DownOutlined />
                   </a>
                 </Dropdown>
+              </Menu.Item> */}
+              <Menu.Item key="about">
+                <Link to="/products">Products</Link>
               </Menu.Item>
               <Menu.Item key="contact">
                 <Link to="/contact">Contact Uc</Link>

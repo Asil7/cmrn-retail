@@ -11,32 +11,32 @@ const ContactUs = () => {
               <Location />
             </Col>
             <Col span={8}>
-              <div className="mb-2 d-flex align-items-center gap-2">
+              <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-geo-alt-fill text-danger fs-5"></i>
                 <strong>Address :</strong>
               </div>
-              <div>
+              <div className="fade-in-right">
                 Uzbekistan, Tashkent, Almazar district, Kushtut MFY, Sagban
                 street 5,6,7
               </div>
               <hr />
 
-              <div className="mb-2 d-flex align-items-center gap-2">
+              <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-telephone-fill fs-6"></i>
                 <strong>Phone :</strong>
               </div>
-              <div>
+              <div className="fade-in-right">
                 <a class="text-decoration-none" href="tel:+998979007707">
                   +998979007707
                 </a>
               </div>
               <hr />
 
-              <div className="mb-2 d-flex align-items-center gap-2">
+              <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-envelope-fill fs-6"></i>
                 <strong>Email :</strong>
               </div>
-              <div>
+              <div className="fade-in-right">
                 <a
                   class="text-decoration-none"
                   href="mailto:info@cmrnretail.uz"
@@ -46,11 +46,11 @@ const ContactUs = () => {
               </div>
               <hr />
 
-              <div className="mb-2 d-flex align-items-center gap-2">
+              <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-chat-dots-fill fs-6"></i>
                 <strong>Messenger :</strong>
               </div>
-              <div className="d-flex gap-3">
+              <div className="fade-in-right d-flex gap-3">
                 <span>
                   <a
                     href="https://www.t.me/"
