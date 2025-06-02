@@ -87,7 +87,7 @@ export default function AppLayout({ children }) {
                 <Link to="/products">Products</Link>
               </Menu.Item>
               <Menu.Item key="contact">
-                <Link to="/contact">Contact Uc</Link>
+                <Link to="/contact">Contact Us</Link>
               </Menu.Item>
             </Menu>
           </div>
