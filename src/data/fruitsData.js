@@ -8,9 +8,10 @@ import cherryFrame from "../images/cherryFrame.svg";
 const fruitsData = {
   products: [
     {
+      id: 1,
       name: "APRICOT",
       local_name: "SHALAH",
-      photo_example: apricot,
+      photo: [apricot],
       frame: apricotFrame,
       description: {
         season: "May to June",
@@ -29,9 +30,10 @@ const fruitsData = {
       },
     },
     {
+      id: 2,
       name: "CHERRY",
       varieties: ["VALOVAYA", "ZIRAAT", "BAHOR"],
-      photo_example: cherry,
+      photo: [cherry, nectarine],
       frame: cherryFrame,
       description: {
         season: "May to July",
@@ -50,9 +52,10 @@ const fruitsData = {
       },
     },
     {
+      id: 3,
       name: "NECTARINE",
       variety: "OCTOBER",
-      photo_example: nectarine,
+      photo: [nectarine],
       frame: nectarineFrame,
       description: {
         season: "August – September",

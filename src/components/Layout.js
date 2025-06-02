@@ -2,39 +2,47 @@ import { useLocation, Link } from "react-router-dom";
 import apricotOrchard from "../images/apricotOrchard.png";
 import melons from "../images/melons.png";
 import fruit from "../images/fruit.png";
+import headproductbackground from "../images/headproductbackground.jpg";
 import { Layout, Menu, Divider } from "antd";
 
 const { Header, Content } = Layout;
 
 const getImageForPath = (path) => {
-  switch (path) {
-    case "/":
-      return apricotOrchard;
-    case "/about":
-      return melons;
-    case "/products":
-      return fruit;
-    case "/contact":
-      return apricotOrchard;
-    case "/products/fruits":
-      return fruit;
-    default:
-      return "/images/default.jpg";
+  if (path === "/") {
+    return apricotOrchard;
+  } else if (path === "/about") {
+    return melons;
+  } else if (path === "/products") {
+    return fruit;
+  } else if (path === "/contact") {
+    return apricotOrchard;
+  } else if (path.startsWith("/products/")) {
+    return headproductbackground;
+  } else {
+    return "/images/default.jpg";
   }
 };
 
-// const dropdownMenu = (
-//   <Menu>
-//     <Menu.Item key="fruits">
-//       <Link to="/products/fruits">Fruits</Link>
-//     </Menu.Item>
-//     <Menu.Item key="vegetables">Vegetables</Menu.Item>
-//   </Menu>
-// );
+const getHeightForPath = (path) => {
+  if (path === "/") {
+    return "500px";
+  } else if (path === "/about") {
+    return "500px";
+  } else if (path === "/products") {
+    return "500px";
+  } else if (path === "/contact") {
+    return "500px";
+  } else if (path.startsWith("/products/")) {
+    return "250px";
+  } else {
+    return "500px";
+  }
+};
 
 export default function AppLayout({ children }) {
   const location = useLocation();
   const headerImage = getImageForPath(location.pathname);
+  const headerHeight = getHeightForPath(location.pathname);
 
   return (
     <Layout>
@@ -42,7 +50,7 @@ export default function AppLayout({ children }) {
         <img
           src={headerImage}
           alt="Header"
-          style={{ width: "100%", height: "500px", objectFit: "cover" }}
+          style={{ width: "100%", height: headerHeight, objectFit: "cover" }}
         />
 
         <div
@@ -51,8 +59,8 @@ export default function AppLayout({ children }) {
             top: 0,
             left: 0,
             width: "100%",
-            height: "500px",
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            height: headerHeight,
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
             zIndex: 1,
             pointerEvents: "none",
           }}
@@ -76,13 +84,6 @@ export default function AppLayout({ children }) {
               <Menu.Item key="about">
                 <Link to="/about">About Us</Link>
               </Menu.Item>
-              {/* <Menu.Item key="products">
-                <Dropdown overlay={dropdownMenu} trigger={["click"]}>
-                  <a onClick={(e) => e.preventDefault()}>
-                    Products <DownOutlined />
-                  </a>
-                </Dropdown>
-              </Menu.Item> */}
               <Menu.Item key="about">
                 <Link to="/products">Products</Link>
               </Menu.Item>
@@ -96,13 +97,13 @@ export default function AppLayout({ children }) {
         <Divider
           style={{
             position: "absolute",
-            top: "70px",
+            top: "65px",
             left: 0,
             width: "100%",
             borderColor: "white",
           }}
         >
-          Text
+          <strong className="text-white fs-4">CMRN RETAIL LLC</strong>
         </Divider>
       </div>
 

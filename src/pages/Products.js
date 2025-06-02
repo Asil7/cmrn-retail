@@ -1,8 +1,10 @@
-import React from "react";
 import { Row, Col, Card } from "antd";
 import fruitsData from "../data/fruitsData";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -27,7 +29,7 @@ const Products = () => {
                   style={{ position: "relative", width: "100%", height: 500 }}
                 >
                   <img
-                    src={fruit.photo_example}
+                    src={fruit.photo[0]}
                     alt={fruit.name}
                     style={{
                       width: "100%",
@@ -52,9 +54,10 @@ const Products = () => {
                   )}
                 </div>
               }
-            >
-              {/* Istasangiz nomini yoki boshqa malumotni shu yerga yozishingiz mumkin */}
-            </Card>
+              onClick={() => {
+                navigate(`/products/${fruit.id}`);
+              }}
+            ></Card>
           </Col>
         ))}
       </Row>
