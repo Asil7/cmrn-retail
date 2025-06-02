@@ -4,6 +4,7 @@ import melons from "../images/melons.png";
 import fruit from "../images/fruit.png";
 import headproductbackground from "../images/headproductbackground.jpg";
 import { Layout, Menu, Divider } from "antd";
+import { useEffect } from "react";
 
 const { Header, Content } = Layout;
 
@@ -39,10 +40,19 @@ const getHeightForPath = (path) => {
   }
 };
 
+const imagesToPreload = [apricotOrchard, melons, fruit, headproductbackground];
+
 export default function AppLayout({ children }) {
   const location = useLocation();
   const headerImage = getImageForPath(location.pathname);
   const headerHeight = getHeightForPath(location.pathname);
+
+  useEffect(() => {
+    imagesToPreload.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   return (
     <Layout>
