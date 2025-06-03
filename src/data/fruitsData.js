@@ -9,7 +9,7 @@ const fruitsData = {
   products: [
     {
       id: 1,
-      name: "APRICOT",
+      name: "Apricot",
       local_name: "SHALAH",
       photo: [apricot],
       frame: apricotFrame,
@@ -31,7 +31,7 @@ const fruitsData = {
     },
     {
       id: 2,
-      name: "CHERRY",
+      name: "Cherry",
       varieties: ["VALOVAYA", "ZIRAAT", "BAHOR"],
       photo: [cherry, nectarine],
       frame: cherryFrame,
@@ -53,7 +53,7 @@ const fruitsData = {
     },
     {
       id: 3,
-      name: "NECTARINE",
+      name: "Nectarine",
       variety: "OCTOBER",
       photo: [nectarine],
       frame: nectarineFrame,

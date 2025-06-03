@@ -112,3 +112,16 @@ html {
 .zoom-in {
   animation: zoom-in 1s ease-out;
 }
+
+.fruit-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}

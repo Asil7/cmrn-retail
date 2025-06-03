@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Row, Col, Carousel } from "antd";
-import fruitsData from "../data/fruitsData";
+import fruitsData from "../../data/fruitsData";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -26,66 +26,79 @@ const ProductDetail = () => {
       <Row>
         <Col
           style={{
-            backgroundColor: "#c2bbb0",
+            backgroundColor: "#c4b5a5",
             padding: "20px",
-            height: "600px",
-            overflow: "hidden",
+            height: "800px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
           span={12}
         >
-          <Carousel
-            arrows
-            autoplay
-            ref={carouselRef}
-            afterChange={(current) => setCurrentSlide(current)}
-          >
-            {product.photo.map((photoUrl, index) => (
-              <div key={index}>
-                <img
-                  src={photoUrl}
-                  alt={`${product.name} ${index + 1}`}
-                  style={{
-                    width: "100%",
-                    maxHeight: "450px", // max balandlik
-                    objectFit: "contain", // tasvirni buzmaydi, ichiga joylashtiradi
-                  }}
-                />
-              </div>
-            ))}
-          </Carousel>
-
-          {/* Thumbnails */}
+          {/* Wrapper - Carousel + Thumbnails */}
           <div
             style={{
               display: "flex",
-              justifyContent: "center",
-              marginTop: "10px",
-              gap: "10px",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-            {product.photo.map((photoUrl, index) => (
-              <img
-                key={index}
-                src={photoUrl}
-                alt={`Thumbnail ${index + 1}`}
-                onClick={() => carouselRef.current.goTo(index)}
-                style={{
-                  width: "50px", // thumb rasmni biroz kichiklashtiramiz
-                  height: "50px",
-                  objectFit: "cover",
-                  border:
-                    currentSlide === index
-                      ? "2px solid #1890ff"
-                      : "1px solid #ccc",
-                  cursor: "pointer",
-                  borderRadius: "4px",
-                }}
-              />
-            ))}
+            <div style={{ width: "100%", maxWidth: "800px" }}>
+              <Carousel
+                arrows
+                autoplay
+                ref={carouselRef}
+                afterChange={(current) => setCurrentSlide(current)}
+              >
+                {product.photo.map((photoUrl, index) => (
+                  <div key={index}>
+                    <img
+                      src={photoUrl}
+                      alt={`${product.name} ${index + 1}`}
+                      style={{
+                        width: "100%",
+                        maxHeight: "550px",
+                        objectFit: "contain",
+                      }}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
+
+            {/* Thumbnails */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "10px",
+                gap: "10px",
+              }}
+            >
+              {product.photo.map((photoUrl, index) => (
+                <img
+                  key={index}
+                  src={photoUrl}
+                  alt={`Thumbnail ${index + 1}`}
+                  onClick={() => carouselRef.current.goTo(index)}
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    objectFit: "cover",
+                    border:
+                      currentSlide === index
+                        ? "2px solid #1890ff"
+                        : "1px solid #ccc",
+                    cursor: "pointer",
+                    borderRadius: "4px",
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </Col>
 
-        <Col span={12} style={{ padding: "20px" }}>
+        <Col span={12} style={{ padding: "20px", backgroundColor: "#f2eadc" }}>
           <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>
             {product.name}
           </h2>

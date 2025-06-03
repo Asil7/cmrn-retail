@@ -3,10 +3,10 @@ import "antd/dist/antd";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
-import Products from "./pages/Products";
+import Products from "./pages/product/Products";
+import ProductDetail from "./pages/product/ProductDetail";
 import ContactUs from "./pages/ContactUs";
 import "./App.css";
-import ProductDetail from "./pages/ProductDetail";
 
 export default function App() {
   return (

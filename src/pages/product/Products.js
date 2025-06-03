@@ -1,6 +1,7 @@
 import { Row, Col, Card } from "antd";
-import fruitsData from "../data/fruitsData";
+import fruitsData from "../../data/fruitsData";
 import { useNavigate } from "react-router-dom";
+import "../product/Products.css";
 
 const Products = () => {
   const navigate = useNavigate();
@@ -19,11 +20,7 @@ const Products = () => {
           <Col key={index}>
             <Card
               hoverable
-              style={{
-                width: 400,
-                height: 500,
-                backgroundColor: "#c2bbb0",
-              }}
+              className="product-card"
               cover={
                 <div
                   style={{ position: "relative", width: "100%", height: 500 }}
@@ -37,6 +34,9 @@ const Products = () => {
                       objectFit: "cover",
                     }}
                   />
+
+                  <div className="product-name-overlay">{fruit.name}</div>
+
                   {fruit.frame && (
                     <img
                       src={fruit.frame}
