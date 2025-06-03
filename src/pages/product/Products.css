@@ -12,10 +12,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: bold;
   z-index: 2;
   text-align: center;
-  border: 2px solid white;
+  border: 1px solid white;
   padding: 10px 10px;
 }
 

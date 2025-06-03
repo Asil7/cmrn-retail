@@ -98,52 +98,39 @@ const ProductDetail = () => {
           </div>
         </Col>
 
-        <Col span={12} style={{ padding: "20px", backgroundColor: "#f2eadc" }}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>
-            {product.name}
-          </h2>
-          <p>{product.local_name && `Local Name: ${product.local_name}`}</p>
-          <p>Season: {product.description.season}</p>
-
-          <h3 style={{ marginTop: "20px" }}>Packaging:</h3>
-          <p>{product.description.packaging.types.join(", ")}</p>
-          <p>Weight: {product.description.packaging.weight_range_kg}</p>
-          {product.description.packaging.custom_packaging && (
-            <p>Custom packaging is available upon request.</p>
-          )}
-
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "20px",
-              marginTop: "30px",
-            }}
-          >
+        <Col
+          span={12}
+          style={{
+            paddingTop: "60px",
+            paddingLeft: "100px",
+            backgroundColor: "#f2eadc",
+          }}
+        >
+          <div>
+            <h6>Fruit</h6>
+          </div>
+          <hr style={{ width: "50%" }} />
+          <br />
+          <h2 style={{ fontSize: "3rem" }}>{product.name}</h2>
+          <br />
+          <ul style={{ paddingLeft: "40px" }}>
             {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                style={{
-                  flex: "1 1 200px",
-                  textAlign: "center",
-                  backgroundColor: "#fff",
-                  padding: "10px",
-                  borderRadius: "8px",
-                  boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                }}
-              >
-                <img
-                  src={benefit.icon}
-                  alt={`Benefit ${index + 1}`}
-                  style={{
-                    width: "60px",
-                    height: "60px",
-                    marginBottom: "10px",
-                  }}
-                />
-                <p>{benefit.text}</p>
-              </div>
+              <li className="fs-6" key={index}>
+                {benefit.text}
+              </li>
             ))}
+          </ul>
+
+          <p>{product.local_name && `Local Name: ${product.local_name}`}</p>
+          {/* <p>Season: {product.description.season}</p> */}
+
+          <h5 style={{ marginTop: "40px" }}>Packaging:</h5>
+          <div style={{ marginLeft: "30px", marginTop: "20px" }}>
+            <p>{product.description.packaging.types.join(", ")}</p>
+            <p>Weight: {product.description.packaging.weight_range_kg}</p>
+            {product.description.packaging.custom_packaging && (
+              <p>Packaging is made according to customer demands.</p>
+            )}
           </div>
         </Col>
       </Row>
