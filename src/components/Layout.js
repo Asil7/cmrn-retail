@@ -3,8 +3,8 @@ import apricotOrchard from "../images/apricotOrchard.png";
 import melons from "../images/melons.png";
 import fruit from "../images/fruit.png";
 import headproductbackground from "../images/headproductbackground.jpg";
-import { Layout, Menu, Divider, ConfigProvider } from "antd";
-import { useEffect } from "react";
+import { Layout, Menu, Divider, ConfigProvider, Affix } from "antd";
+import { useEffect, useState } from "react";
 
 const { Header, Content } = Layout;
 
@@ -46,6 +46,7 @@ export default function AppLayout({ children }) {
   const location = useLocation();
   const headerImage = getImageForPath(location.pathname);
   const headerHeight = getHeightForPath(location.pathname);
+  const [isAffixed, setIsAffixed] = useState(false);
 
   useEffect(() => {
     imagesToPreload.forEach((src) => {
@@ -82,34 +83,41 @@ export default function AppLayout({ children }) {
               pointerEvents: "none",
             }}
           />
-          <Header
-            style={{
-              position: "absolute",
-              top: 20,
-              width: "100%",
-              backgroundColor: "rgba(255, 255, 255, 0.0)",
-              display: "flex",
-              zIndex: 2,
-              padding: "0 20px",
-            }}
-          >
-            <div style={{ flex: 1 }}>
-              <Menu mode="horizontal" theme="light" selectable={false}>
-                <Menu.Item key="home">
-                  <Link to="/">Home</Link>
-                </Menu.Item>
-                <Menu.Item key="about">
-                  <Link to="/about">About Us</Link>
-                </Menu.Item>
-                <Menu.Item key="about">
-                  <Link to="/products">Products</Link>
-                </Menu.Item>
-                <Menu.Item key="contact">
-                  <Link to="/contact">Contact Us</Link>
-                </Menu.Item>
-              </Menu>
-            </div>
-          </Header>
+          <Affix offsetTop={0} onChange={(affixed) => setIsAffixed(affixed)}>
+            <Header
+              className={`main-header ${isAffixed ? "affixed" : "not-affixed"}`}
+            >
+              <div style={{ flex: 1 }}>
+                <Menu mode="horizontal" theme="light" selectable={false}>
+                  <Menu.Item key="home">
+                    <Link to="/">Home</Link>
+                  </Menu.Item>
+                  <Menu.Item key="about">
+                    <Link to="/about">About Us</Link>
+                  </Menu.Item>
+                  <Menu.Item key="about">
+                    <Link to="/products">Products</Link>
+                  </Menu.Item>
+                  <Menu.Item key="contact">
+                    <Link to="/contact">Contact Us</Link>
+                  </Menu.Item>
+                </Menu>
+              </div>
+              {isAffixed && (
+                <div
+                  style={{
+                    position: "absolute",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    color: "gray",
+                    pointerEvents: "none",
+                  }}
+                >
+                  <strong className="text-gray fs-4">CMRN RETAIL LLC</strong>
+                </div>
+              )}
+            </Header>
+          </Affix>
 
           <Divider
             style={{

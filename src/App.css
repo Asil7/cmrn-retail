@@ -56,7 +56,7 @@ html {
 
 .ant-menu-light .ant-menu-item:hover a,
 .ant-menu-light > .ant-menu .ant-menu-item:hover a {
-  color: #1890ff;
+  color: #ed6f01;
 }
 
 .ant-menu-horizontal {
@@ -66,6 +66,38 @@ html {
 .ant-menu-horizontal > .ant-menu-item::after,
 .ant-menu-horizontal > .ant-menu-submenu::after {
   border-bottom: none !important;
+}
+
+.main-header {
+  transition: top 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+  z-index: 2;
+  height: 80px;
+}
+
+.main-header.affixed {
+  background-color: #f2eadc;
+  top: 0 !important;
+  border-bottom: 1px solid gray;
+  align-items: center;
+}
+
+.main-header.not-affixed {
+  top: 20px !important;
+  background-color: transparent;
+}
+
+.main-header.affixed .ant-menu-light .ant-menu-item a,
+.main-header.affixed .ant-menu-light > .ant-menu .ant-menu-item a {
+  color: gray !important;
+}
+
+.main-header.affixed .ant-menu-light .ant-menu-item:hover a,
+.main-header.affixed .ant-menu-light > .ant-menu .ant-menu-item:hover a {
+  color: #ed6f01 !important;
 }
 
 @keyframes fade-in-left {
@@ -113,15 +145,20 @@ html {
   animation: zoom-in 1s ease-out;
 }
 
-.fruit-name {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px 0;
-  background: rgba(0, 0, 0, 0.3);
-  color: white;
-  font-weight: 600;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ed6f01;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ed6f01;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: 5px;
 }

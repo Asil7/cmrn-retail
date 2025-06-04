@@ -1,16 +1,16 @@
 import Location from "../components/location/Location";
-import { Row, Col } from "antd";
+import { Row, Col, Button } from "antd";
 
 const ContactUs = () => {
   return (
     <div style={{ backgroundColor: "#f2eadc" }}>
       <Row justify="center">
-        <Col span={18} className="mt-5">
-          <Row>
-            <Col span={16}>
+        <Col sm={24} md={24} lg={24} xl={24} xxl={18}>
+          <Row className="mt-5" gutter={[60]}>
+            <Col xs={24} sm={24} md={24} lg={16} xl={16}>
               <Location />
             </Col>
-            <Col span={8}>
+            <Col xs={24} sm={24} md={24} lg={8} xl={8}>
               <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-geo-alt-fill text-danger fs-5"></i>
                 <strong>Address :</strong>
