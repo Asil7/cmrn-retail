@@ -1,9 +1,9 @@
 import Location from "../components/location/Location";
-import { Row, Col, Button } from "antd";
+import { Row, Col } from "antd";
 
 const ContactUs = () => {
   return (
-    <div style={{ backgroundColor: "#f2eadc" }}>
+    <div style={{ backgroundColor: "#f2eadc" }} className="pb-5">
       <Row justify="center">
         <Col sm={24} md={24} lg={24} xl={24} xxl={18}>
           <Row className="mt-5" gutter={[60]}>

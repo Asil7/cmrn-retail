@@ -5,6 +5,7 @@ import fruit from "../images/fruit.png";
 import headproductbackground from "../images/headproductbackground.jpg";
 import { Layout, Menu, Divider, ConfigProvider, Affix } from "antd";
 import { useEffect, useState } from "react";
+import { Footer } from "antd/es/layout/layout";
 
 const { Header, Content } = Layout;
 
@@ -133,6 +134,36 @@ export default function AppLayout({ children }) {
         </div>
 
         <Content>{children}</Content>
+
+        <Footer
+          style={{
+            backgroundColor: "#002f20",
+            color: "#fff",
+            transition: "all 0.6s ease",
+          }}
+        >
+          <div style={{ padding: "40px 80px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <img src="/images/logo.png" alt="logo" height="80" />
+              {/* linklar joyi */}
+            </div>
+            <hr style={{ borderColor: "#ccc", margin: "20px 0" }} />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                fontSize: "12px",
+              }}
+            >
+              <div>© 2025 CMRN RETAIL LLC. All rights reserved.</div>
+              <div style={{ display: "flex", gap: 16 }}>
+                <i className="fab fa-instagram" />
+                <i className="fab fa-facebook" />
+                <i className="fab fa-youtube" />
+              </div>
+            </div>
+          </div>
+        </Footer>
       </Layout>
     </ConfigProvider>
   );
