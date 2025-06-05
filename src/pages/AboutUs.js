@@ -1,14 +1,13 @@
-import React from "react";
-import { Row, Col } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/reset.css";
 
 const AboutUs = () => {
   return (
-    <div className="about-container py-5">
-      <Row gutter={[24, 24]} justify="center">
-        <Col xs={24} md={8} className="swing-drop-in">
-          <div className="section-box">
+    <div style={{ height: "100vh" }}>
+      <h1>About Us</h1>
+      {/* <Row gutter={[24, 24]}>
+        <Col xs={24} md={8}>
+          <div>
             <h4>Company Overview</h4>
             <p>
               CMRN Retail has dedicated itself to providing the finest fruits
@@ -19,8 +18,8 @@ const AboutUs = () => {
           </div>
         </Col>
 
-        <Col xs={24} md={8} className="swing-drop-in">
-          <div className="section-box">
+        <Col xs={24} md={8}>
+          <div>
             <h4>Mission Statement</h4>
             <p>
               Our mission is to deliver premium quality produce that not only
@@ -30,8 +29,8 @@ const AboutUs = () => {
           </div>
         </Col>
 
-        <Col xs={24} md={8} className="swing-drop-in">
-          <div className="section-box">
+        <Col xs={24} md={12}>
+          <div>
             <h4>Vision Statement</h4>
             <p>
               To be recognized as the leading supplier of fresh products
@@ -39,7 +38,7 @@ const AboutUs = () => {
             </p>
           </div>
         </Col>
-      </Row>
+      </Row> */}
     </div>
   );
 };
