@@ -145,6 +145,21 @@ html {
   animation: zoom-in 1s ease-out;
 }
 
+@keyframes blurred-fade-in {
+  0% {
+    filter: blur(5px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.blurred-fade-in {
+  animation: blurred-fade-in 0.9s ease-in-out;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
