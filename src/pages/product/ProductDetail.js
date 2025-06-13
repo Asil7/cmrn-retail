@@ -25,22 +25,25 @@ const ProductDetail = () => {
     <div>
       <Row>
         <Col
+          xs={24}
+          md={12}
           style={{
             backgroundColor: "#c4b5a5",
             padding: "20px",
-            height: "800px",
+            minHeight: "400px",
+            height: "80vh",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
-          span={12}
         >
-          {/* Wrapper - Carousel + Thumbnails */}
+          {/* Carousel + Thumbnails */}
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              width: "100%",
             }}
           >
             <div style={{ width: "100%", maxWidth: "800px" }}>
@@ -57,7 +60,7 @@ const ProductDetail = () => {
                       alt={`${product.name} ${index + 1}`}
                       style={{
                         width: "100%",
-                        maxHeight: "550px",
+                        maxHeight: "400px",
                         objectFit: "contain",
                       }}
                     />
@@ -72,6 +75,7 @@ const ProductDetail = () => {
                 display: "flex",
                 justifyContent: "center",
                 marginTop: "10px",
+                flexWrap: "wrap",
                 gap: "10px",
               }}
             >
@@ -99,38 +103,34 @@ const ProductDetail = () => {
         </Col>
 
         <Col
-          span={12}
+          xs={24}
+          md={12}
           style={{
-            paddingTop: "60px",
-            paddingLeft: "100px",
+            padding: "40px 20px",
             backgroundColor: "#f2eadc",
           }}
         >
           <div>
             <h6>Fruit</h6>
-          </div>
-          <hr style={{ width: "50%" }} />
-          <br />
-          <h2 style={{ fontSize: "3rem" }}>{product.name}</h2>
-          <br />
-          <ul style={{ paddingLeft: "40px" }}>
-            {benefits.map((benefit, index) => (
-              <li className="fs-6" key={index}>
-                {benefit.text}
-              </li>
-            ))}
-          </ul>
+            <hr style={{ width: "50%" }} />
+            <h2 style={{ fontSize: "2rem" }}>{product.name}</h2>
 
-          <p>{product.local_name && `Local Name: ${product.local_name}`}</p>
-          {/* <p>Season: {product.description.season}</p> */}
+            <ul style={{ paddingLeft: "20px" }}>
+              {benefits.map((benefit, index) => (
+                <li key={index}>{benefit.text}</li>
+              ))}
+            </ul>
 
-          <h5 style={{ marginTop: "40px" }}>Packaging:</h5>
-          <div style={{ marginLeft: "30px", marginTop: "20px" }}>
-            <p>{product.description.packaging.types.join(", ")}</p>
-            <p>Weight: {product.description.packaging.weight_range_kg}</p>
-            {product.description.packaging.custom_packaging && (
-              <p>Packaging is made according to customer demands.</p>
-            )}
+            <p>{product.local_name && `Local Name: ${product.local_name}`}</p>
+
+            <h5 style={{ marginTop: "30px" }}>Packaging:</h5>
+            <div style={{ marginLeft: "10px", marginTop: "10px" }}>
+              <p>{product.description.packaging.types.join(", ")}</p>
+              <p>Weight: {product.description.packaging.weight_range_kg}</p>
+              {product.description.packaging.custom_packaging && (
+                <p>Packaging is made according to customer demands.</p>
+              )}
+            </div>
           </div>
         </Col>
       </Row>

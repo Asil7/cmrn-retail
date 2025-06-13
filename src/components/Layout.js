@@ -69,7 +69,12 @@ export default function AppLayout({ children }) {
           <img
             src={headerImage}
             alt="Header"
-            style={{ width: "100%", height: headerHeight, objectFit: "cover" }}
+            style={{
+              width: "100%",
+              height: "auto",
+              maxHeight: headerHeight,
+              objectFit: "cover",
+            }}
           />
 
           <div
@@ -78,7 +83,8 @@ export default function AppLayout({ children }) {
               top: 0,
               left: 0,
               width: "100%",
-              height: headerHeight,
+              height: "auto",
+              maxHeight: headerHeight,
               backgroundColor: "rgba(0, 0, 0, 0.1)",
               zIndex: 1,
               pointerEvents: "none",

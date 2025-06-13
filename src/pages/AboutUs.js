@@ -6,7 +6,7 @@ const { Title, Paragraph } = Typography;
 
 const AboutUs = () => {
   return (
-    <div style={{ backgroundColor: "#f9f9f9", padding: "40px 0" }}>
+    <div style={{ backgroundColor: "#f2eadc", padding: "40px 0" }}>
       <div className="container">
         <div className="row justify-content-center mb-4">
           <div className="col-md-10 col-lg-8">
