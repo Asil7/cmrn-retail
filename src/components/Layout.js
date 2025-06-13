@@ -13,7 +13,7 @@ const getImageForPath = (path) => {
   if (path === "/") {
     return apricotOrchard;
   } else if (path === "/about") {
-    return melons;
+    return fruit;
   } else if (path === "/products") {
     return fruit;
   } else if (path === "/contact") {
