@@ -1,9 +1,23 @@
 const Home = () => {
   return (
     <div
-      style={{ backgroundColor: "#f2eadc", padding: "40px", height: "80vh" }}
+      style={{
+        backgroundColor: "#f2eadc",
+        paddingTop: "60px",
+        height: "100vh",
+      }}
     >
-      <h1>Home</h1>
+      <div className="text-center fade-in-right">
+        <h1>Bringing the Freshness of Uzbekistan to Your Table</h1>
+      </div>
+      <div
+        style={{
+          backgroundColor: "#ffcf38",
+          height: "75vh",
+          width: "80%",
+          marginTop: "60px",
+        }}
+      ></div>
       {/* <div> */}
       {/* <Row style={{ backgroundColor: "#c93b1c", width: "50%" }}> */}
       {/* <Col span={12}>

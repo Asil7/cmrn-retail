@@ -100,6 +100,7 @@ html {
   color: #ed6f01 !important;
 }
 
+/* ############################### */
 @keyframes fade-in-left {
   0% {
     opacity: 0;
@@ -112,9 +113,11 @@ html {
 }
 
 .fade-in-left {
-  animation: fade-in-left 0.8s ease-in-out;
+  animation: fade-in-left 1s ease-in-out;
 }
+/* ############################### */
 
+/* ############################### */
 @keyframes fade-in-right {
   0% {
     opacity: 0;
@@ -127,9 +130,11 @@ html {
 }
 
 .fade-in-right {
-  animation: fade-in-right 0.8s ease-in-out;
+  animation: fade-in-right 1s ease-in-out;
 }
+/* ############################### */
 
+/* ############################### */
 @keyframes zoom-in {
   0% {
     opacity: 0;
@@ -144,7 +149,9 @@ html {
 .zoom-in {
   animation: zoom-in 1s ease-out;
 }
+/* ############################### */
 
+/* ############################### */
 @keyframes blurred-fade-in {
   0% {
     filter: blur(5px);
@@ -157,8 +164,9 @@ html {
 }
 
 .blurred-fade-in {
-  animation: blurred-fade-in 0.9s ease-in-out;
+  animation: blurred-fade-in 1s ease-in-out;
 }
+/* ############################### */
 
 ::-webkit-scrollbar {
   width: 8px;
