@@ -1,3 +1,5 @@
+import { Col, Row } from "antd";
+
 const Home = () => {
   return (
     <div
@@ -10,43 +12,43 @@ const Home = () => {
       <div className="text-center fade-in-right">
         <h1>Bringing the Freshness of Uzbekistan to Your Table</h1>
       </div>
+
       <div
         style={{
           backgroundColor: "#ffcf38",
           height: "75vh",
           width: "80%",
+          padding: "20px",
+          borderTopRightRadius: "10px",
+          borderBottomRightRadius: "10px",
           marginTop: "60px",
         }}
-      ></div>
-      {/* <div> */}
-      {/* <Row style={{ backgroundColor: "#c93b1c", width: "50%" }}> */}
-      {/* <Col span={12}>
-            <img
-              src={fruit}
-              alt="Fruit"
-              style={{
-                position: "absolute",
-                height: "500px",
-                width: "600px",
-                objectFit: "cover",
-              }}
-            />
-          </Col> */}
-
-      {/* <Col span={10}>
-            <h1>Bringing the Freshness of Uzbekistan to Your Table</h1>
-            <br />
-            <h3>Introduction Brief</h3>
-            <p>
-              CMRN Retail is a leading producer and supplier of high-quality
-              fruits and vegetables from Uzbekistan. Specializing in premium
-              cherries, we export to major markets including Korea and China,
-              ensuring freshness and superior quality with every shipment.
-            </p>
+      >
+        <Row>
+          <Col span={14}>
+            <div style={{ width: "45%", margin: "120px auto" }}>
+              <h2>Introduction Brief</h2>
+              <hr />
+              <p style={{ lineHeight: "3", marginTop: "50px" }}>
+                CMRN Retail is a leading producer and supplier of high-quality
+                fruits and vegetables from Uzbekistan. Specializing in premium
+                cherries, we export to major markets including Korea and China,
+                ensuring freshness and superior quality with every shipment.
+              </p>
+            </div>
           </Col>
-        </Row> */}
-      {/* </div> */}
+
+          <Col span={10}>
+            <img
+              src="https://via.placeholder.com/400x300"
+              alt="Uzbek Fruits"
+              style={{ maxWidth: "100%", borderRadius: "10px" }}
+            />
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 };
+
 export default Home;
