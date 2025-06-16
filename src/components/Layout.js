@@ -1,6 +1,5 @@
 import { useLocation, Link } from "react-router-dom";
 import apricotOrchard from "../images/apricotOrchard.png";
-import melons from "../images/melons.png";
 import fruit from "../images/fruit.png";
 import headproductbackground from "../images/headproductbackground.jpg";
 import { Layout, Menu, Divider, ConfigProvider, Affix } from "antd";
@@ -41,7 +40,7 @@ const getHeightForPath = (path) => {
   }
 };
 
-const imagesToPreload = [apricotOrchard, melons, fruit, headproductbackground];
+const imagesToPreload = [apricotOrchard, fruit, headproductbackground];
 
 export default function AppLayout({ children }) {
   const location = useLocation();
