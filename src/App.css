@@ -260,13 +260,6 @@ html {
   }
 }
 
-@media (max-width: 500px) {
-  .home-card {
-    width: 100%;
-    padding-bottom: 40px;
-  }
-}
-
 .mobile-only-image {
   display: none;
 }

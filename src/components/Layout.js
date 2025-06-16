@@ -119,7 +119,9 @@ export default function AppLayout({ children }) {
                     pointerEvents: "none",
                   }}
                 >
-                  <strong className="text-gray fs-4">CMRN RETAIL LLC</strong>
+                  <strong className="text-gray fs-4 d-none d-md-inline">
+                    CMRN RETAIL LLC
+                  </strong>
                 </div>
               )}
             </Header>
