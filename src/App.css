@@ -251,6 +251,7 @@ html {
   .home-card {
     width: 100%;
     margin-bottom: 0;
+    padding-bottom: 40px;
   }
 }
 
