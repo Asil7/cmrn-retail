@@ -12,5 +12,14 @@
     "missionStatementText": "Our mission is to deliver premium quality produce that not only satisfies our customers' needs but also supports local farmers and sustainable agricultural practices.",
     "visionStatement": "Vision Statement",
     "visionStatementText": "To be recognized as the leading supplier of fresh products renowned for our quality, reliability, and customer service."
+  },
+  "home": {
+    "slogan": "Bringing the Freshness of Uzbekistan to Your Table.",
+    "introductionTitle": "Introduction",
+    "introductionBrief": "CMRN Retail is a leading producer and supplier of high-quality fruits and vegetables from Uzbekistan. Specializing in premium cherries, we export to major markets including Korea and China, ensuring freshness and superior quality with every shipment.",
+    "ctaButton": "Explore Our Products"
+  },
+  "contact": {
+    "address": "Address"
   }
 }

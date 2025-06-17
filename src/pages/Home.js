@@ -1,9 +1,11 @@
 import { Col, Row } from "antd";
 import portak from "../images/portakalresim.jpg";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const handleExploreClick = () => {
     navigate("/products");
   };
@@ -16,7 +18,7 @@ const Home = () => {
       }}
     >
       <div className="text-center fade-in-right">
-        <h1>Bringing the Freshness of Uzbekistan to Your Table</h1>
+        <h1>{t("home.slogan")}</h1>
       </div>
 
       <div className="home-card">
@@ -25,14 +27,10 @@ const Home = () => {
             <Row justify="center">
               <Col xs={24} sm={20} md={22} lg={20} xl={18} xxl={10}>
                 <div style={{ margin: "100px auto" }}>
-                  <h2>Introduction Brief</h2>
+                  <h2>{t("home.introductionTitle")}</h2>
                   <hr />
                   <p style={{ lineHeight: "3", marginTop: "50px" }}>
-                    CMRN Retail is a leading producer and supplier of
-                    high-quality fruits and vegetables from Uzbekistan.
-                    Specializing in premium cherries, we export to major markets
-                    including Korea and China, ensuring freshness and superior
-                    quality with every shipment.
+                    {t("home.introductionBrief")}
                   </p>
                   <br />
                   <button
@@ -40,7 +38,7 @@ const Home = () => {
                     onClick={handleExploreClick}
                     className="btn btn-outline-dark"
                   >
-                    Explore Our Products
+                    {t("home.ctaButton")}
                   </button>
                 </div>
               </Col>
