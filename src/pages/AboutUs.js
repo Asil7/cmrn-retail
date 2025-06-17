@@ -1,10 +1,13 @@
 import React from "react";
 import { Card, Typography } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useTranslation } from "react-i18next";
 
 const { Title, Paragraph } = Typography;
 
 const AboutUs = () => {
+  const { t } = useTranslation();
+
   return (
     <div style={{ backgroundColor: "#f2eadc", padding: "40px 0" }}>
       <div className="container">
@@ -23,14 +26,10 @@ const AboutUs = () => {
                   className="text-center mb-4"
                   style={{ color: "#52c41a" }}
                 >
-                  Company Overview
+                  {t("about.companyOverview")}
                 </Title>
                 <Paragraph style={{ fontSize: "16px", lineHeight: "1.8" }}>
-                  "<strong>CMRN Retail</strong> has dedicated itself to
-                  providing the finest fruits and vegetables from the fertile
-                  lands of Uzbekistan. Our commitment to quality and freshness
-                  sets us apart as a trusted supplier in the international
-                  market."
+                  {t("about.companyOverviewText")}
                 </Paragraph>
               </div>
             </Card>
@@ -49,12 +48,10 @@ const AboutUs = () => {
             >
               <div className="p-4">
                 <Title level={3} style={{ color: "#1890ff" }}>
-                  Mission Statement
+                  {t("about.missionStatement")}
                 </Title>
                 <Paragraph style={{ fontSize: "16px", lineHeight: "1.8" }}>
-                  “Our mission is to deliver premium quality produce that not
-                  only satisfies our customers' needs but also supports local
-                  farmers and sustainable agricultural practices.”
+                  {t("about.missionStatementText")}
                 </Paragraph>
               </div>
             </Card>
@@ -73,11 +70,10 @@ const AboutUs = () => {
             >
               <div className="p-4">
                 <Title level={3} style={{ color: "#fa541c" }}>
-                  Vision Statement
+                  {t("about.visionStatement")}
                 </Title>
                 <Paragraph style={{ fontSize: "16px", lineHeight: "1.8" }}>
-                  “To be recognized as the leading supplier of fresh products
-                  renowned for our quality, reliability, and customer service.”
+                  {t("about.visionStatementText")}
                 </Paragraph>
               </div>
             </Card>

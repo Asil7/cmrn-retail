@@ -2,9 +2,19 @@ import { useLocation, Link } from "react-router-dom";
 import apricotOrchard from "../images/apricotOrchard.png";
 import fruit from "../images/fruit.png";
 import headproductbackground from "../images/headproductbackground.jpg";
-import { Layout, Menu, Divider, ConfigProvider, Affix } from "antd";
+import {
+  Layout,
+  Menu,
+  Divider,
+  ConfigProvider,
+  Affix,
+  Button,
+  Drawer,
+} from "antd";
 import { useEffect, useState } from "react";
 import { Footer } from "antd/es/layout/layout";
+import { MenuOutlined } from "@ant-design/icons";
+import { useTranslation } from "react-i18next";
 
 const { Header, Content } = Layout;
 
@@ -48,6 +58,20 @@ export default function AppLayout({ children }) {
   const headerHeight = getHeightForPath(location.pathname);
   const [isAffixed, setIsAffixed] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+  const [drawerVisible, setDrawerVisible] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     imagesToPreload.forEach((src) => {
       const img = new Image();
@@ -89,55 +113,136 @@ export default function AppLayout({ children }) {
               pointerEvents: "none",
             }}
           />
-          <Affix offsetTop={0} onChange={(affixed) => setIsAffixed(affixed)}>
-            <Header
-              className={`main-header ${isAffixed ? "affixed" : "not-affixed"}`}
-            >
-              <div style={{ flex: 1 }}>
-                <Menu mode="horizontal" theme="light" selectable={false}>
+          {!isMobile && (
+            <>
+              <Affix
+                offsetTop={0}
+                onChange={(affixed) => setIsAffixed(affixed)}
+              >
+                <Header
+                  className={`main-header ${
+                    isAffixed ? "affixed" : "not-affixed"
+                  }`}
+                >
+                  <div style={{ flex: 1 }}>
+                    <Menu mode="horizontal" theme="light" selectable={false}>
+                      <Menu.Item key="home">
+                        <Link to="/">{t("navigator.home")}</Link>
+                      </Menu.Item>
+                      <Menu.Item key="about">
+                        <Link to="/about">{t("navigator.about")}</Link>
+                      </Menu.Item>
+                      <Menu.Item key="about">
+                        <Link to="/products">{t("navigator.products")}</Link>
+                      </Menu.Item>
+                      <Menu.Item key="contact">
+                        <Link to="/contact">{t("navigator.contact")}</Link>
+                      </Menu.Item>
+                    </Menu>
+                  </div>
+                  {isAffixed && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        color: "gray",
+                        pointerEvents: "none",
+                      }}
+                    >
+                      <strong className="text-gray fs-4 d-none d-md-inline">
+                        CMRN RETAIL LLC
+                      </strong>
+                    </div>
+                  )}
+                </Header>
+              </Affix>
+
+              <Divider
+                style={{
+                  position: "absolute",
+                  top: "65px",
+                  left: 0,
+                  width: "100%",
+                  borderColor: "white",
+                }}
+              >
+                <strong className="text-white fs-4">CMRN RETAIL LLC</strong>
+              </Divider>
+            </>
+          )}
+
+          {isMobile && (
+            <>
+              <div style={{ backgroundColor: "rgba(0,0,0,0.4)" }}>
+                <Button
+                  type="text"
+                  icon={
+                    <MenuOutlined style={{ fontSize: 24, color: "white" }} />
+                  }
+                  onClick={() => setDrawerVisible(true)}
+                  style={{
+                    position: "fixed",
+                    top: 16,
+                    right: 16,
+                    zIndex: 1000,
+                    backgroundColor: "rgba(0,0,0,0.4)",
+                    border: "none",
+                  }}
+                />
+              </div>
+
+              <Drawer
+                title={
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span className="ms-2">CMRN RETAIL LLC</span>
+                    <div style={{ display: "flex", gap: 8 }}>
+                      <Button
+                        size="small"
+                        onClick={() => i18n.changeLanguage("en")}
+                      >
+                        🇬🇧 En
+                      </Button>
+                      <Button
+                        size="small"
+                        onClick={() => i18n.changeLanguage("ru")}
+                      >
+                        🇷🇺 Ru
+                      </Button>
+                    </div>
+                  </div>
+                }
+                placement="right"
+                onClose={() => setDrawerVisible(false)}
+                visible={drawerVisible}
+              >
+                <Menu
+                  mode="vertical"
+                  onClick={() => setDrawerVisible(false)}
+                  className="fade-in-up"
+                >
                   <Menu.Item key="home">
-                    <Link to="/">Home</Link>
+                    <Link to="/">{t("navigator.home")}</Link>
                   </Menu.Item>
                   <Menu.Item key="about">
-                    <Link to="/about">About Us</Link>
+                    <Link to="/about">{t("navigator.about")}</Link>
                   </Menu.Item>
-                  <Menu.Item key="about">
-                    <Link to="/products">Products</Link>
+                  <Menu.Item key="products">
+                    <Link to="/products">{t("navigator.products")}</Link>
                   </Menu.Item>
                   <Menu.Item key="contact">
-                    <Link to="/contact">Contact Us</Link>
+                    <Link to="/contact">{t("navigator.contact")}</Link>
                   </Menu.Item>
                 </Menu>
-              </div>
-              {isAffixed && (
-                <div
-                  style={{
-                    position: "absolute",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    color: "gray",
-                    pointerEvents: "none",
-                  }}
-                >
-                  <strong className="text-gray fs-4 d-none d-md-inline">
-                    CMRN RETAIL LLC
-                  </strong>
-                </div>
-              )}
-            </Header>
-          </Affix>
-
-          <Divider
-            style={{
-              position: "absolute",
-              top: "65px",
-              left: 0,
-              width: "100%",
-              borderColor: "white",
-            }}
-          >
-            <strong className="text-white fs-4">CMRN RETAIL LLC</strong>
-          </Divider>
+              </Drawer>
+            </>
+          )}
         </div>
 
         <Content>{children}</Content>
@@ -152,7 +257,6 @@ export default function AppLayout({ children }) {
           <div style={{ padding: "40px 80px" }}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <img src="/images/logo.png" alt="logo" height="80" />
-              {/* linklar joyi */}
             </div>
             <hr style={{ borderColor: "#ccc", margin: "20px 0" }} />
             <div

@@ -54,9 +54,23 @@ html {
   text-decoration: none;
 }
 
+@media (max-width: 768px) {
+  .ant-menu-light .ant-menu-item a,
+  .ant-menu-light > .ant-menu .ant-menu-item a {
+    color: #000 !important;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+}
+
 .ant-menu-light .ant-menu-item:hover a,
 .ant-menu-light > .ant-menu .ant-menu-item:hover a {
   color: #ed6f01;
+}
+
+.ant-menu-light .ant-menu-item-selected,
+.ant-menu-light > .ant-menu .ant-menu-item-selected {
+  background-color: transparent !important;
 }
 
 .ant-menu-horizontal {
@@ -131,6 +145,23 @@ html {
 
 .fade-in-right {
   animation: fade-in-right 1s ease-in-out;
+}
+/* ############################### */
+
+/* ############################### */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.8s ease-in-out;
 }
 /* ############################### */
 
@@ -249,7 +280,7 @@ html {
 
 @media (max-width: 1400px) {
   .home-card {
-    max-height: 60vh;
+    max-height: 64vh;
   }
 }
 
@@ -257,12 +288,6 @@ html {
   .home-card {
     width: 100%;
     margin-bottom: 0;
-  }
-}
-
-@media (max-width: 500px) {
-  .home-card {
-    padding-bottom: 30px;
   }
 }
 

@@ -1,0 +1,16 @@
+{
+  "navigator": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact Us"
+  },
+  "about": {
+    "companyOverview": "Company Overview",
+    "companyOverviewText": "CMRN RETAIL has dedicated itself to providing the finest fruits and vegetables from the fertile lands of Uzbekistan. Our commitment to quality and freshness sets us apart as a trusted supplier in the international market.",
+    "missionStatement": "Mission Statement",
+    "missionStatementText": "Our mission is to deliver premium quality produce that not only satisfies our customers' needs but also supports local farmers and sustainable agricultural practices.",
+    "visionStatement": "Vision Statement",
+    "visionStatementText": "To be recognized as the leading supplier of fresh products renowned for our quality, reliability, and customer service."
+  }
+}
