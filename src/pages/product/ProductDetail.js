@@ -67,7 +67,7 @@ const ProductDetail = () => {
                       alt={`${product.name} ${index + 1}`}
                       style={{
                         width: "100%",
-                        maxHeight: "400px",
+                        maxHeight: "500px",
                         objectFit: "contain",
                       }}
                     />
@@ -112,18 +112,19 @@ const ProductDetail = () => {
           xs={24}
           md={12}
           style={{
-            padding: "40px 20px",
+            padding: "60px 70px",
             backgroundColor: "#f2eadc",
           }}
         >
           <div>
-            <h6>{lang === "en" ? "Fruit" : "Фрукты"}</h6>
+            <h6>{lang === "ru" ? "Фрукты" : "Fruit"}</h6>
             <hr style={{ width: "50%" }} />
+            <br />
             <h2 style={{ fontSize: "2rem" }}>{product.name}</h2>
 
             {product.varieties && (
               <p>
-                {lang === "en" ? "Varieties:" : "Сорта:"}{" "}
+                {lang === "ru" ? "Сорта:" : "Varieties:"}{" "}
                 {product.varieties.join(", ")}
               </p>
             )}
@@ -135,12 +136,12 @@ const ProductDetail = () => {
             </ul>
 
             <h5 style={{ marginTop: "30px" }}>
-              {lang === "en" ? "Packaging" : "Упаковка"}
+              {lang === "ru" ? "Упаковка " : "Packaging "}
             </h5>
             <div style={{ marginLeft: "10px", marginTop: "10px" }}>
               <p>{product.description.packaging.types.join(", ")}</p>
               <p>
-                {lang === "en" ? "Weight:" : "Вес:"}
+                {lang === "ru" ? "Вес: " : "Weight: "}
                 {product.description.packaging.weight_range_kg}
               </p>
               {product.description.packaging.custom_packaging && (

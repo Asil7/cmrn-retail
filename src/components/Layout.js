@@ -10,10 +10,11 @@ import {
   Affix,
   Button,
   Drawer,
+  Dropdown,
 } from "antd";
 import { useEffect, useState } from "react";
 import { Footer } from "antd/es/layout/layout";
-import { MenuOutlined } from "@ant-design/icons";
+import { DownOutlined, MenuOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 
 const { Header, Content } = Layout;
@@ -87,11 +88,23 @@ export default function AppLayout({ children }) {
     });
   }, []);
 
+  const menuItems = [
+    {
+      key: "en",
+      label: "🇬🇧 EN",
+    },
+    {
+      key: "ru",
+      label: "🇷🇺 RU",
+    },
+  ];
+
   return (
     <ConfigProvider
       theme={{
         token: {
           fontFamily: "Averia Gruesa Libre",
+          colorPrimary: "#ed6f01",
         },
       }}
     >
@@ -179,6 +192,31 @@ export default function AppLayout({ children }) {
                       </strong>
                     </div>
                   )}
+
+                  <Dropdown
+                    trigger={["click"]}
+                    menu={{
+                      items: menuItems,
+                      selectedKeys: [i18n.language],
+                      onClick: ({ key }) => i18n.changeLanguage(key),
+                    }}
+                    placement="bottom"
+                  >
+                    <div
+                      style={{
+                        padding: "0 30px",
+                        color: isAffixed ? "gray" : "white",
+                        fontSize: "16px",
+                        borderLeft: isAffixed
+                          ? "1px solid gray"
+                          : "1px solid white",
+                      }}
+                    >
+                      <strong>
+                        {i18n.language.toUpperCase()} <DownOutlined />
+                      </strong>
+                    </div>
+                  </Dropdown>
                 </Header>
               </Affix>
 
