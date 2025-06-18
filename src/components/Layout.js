@@ -55,7 +55,6 @@ const getPageTitle = (path, t) => {
   if (path === "/about") return t("navigator.about");
   if (path === "/products") return t("navigator.products");
   if (path === "/contact") return t("navigator.contact");
-  if (path.startsWith("/products/")) return t("navigator.productDetails");
   return "";
 };
 
@@ -126,8 +125,8 @@ export default function AppLayout({ children }) {
           <div
             style={{
               position: "absolute",
-              bottom: "20px",
-              left: "20%",
+              bottom: "80px",
+              left: "10%",
               color: "white",
               zIndex: 2,
               fontSize: "32px",
