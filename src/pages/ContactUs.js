@@ -7,80 +7,97 @@ const ContactUs = () => {
 
   return (
     <div style={{ backgroundColor: "#f2eadc" }} className="pb-5">
-      <Row justify="center">
-        <Col sm={24} md={24} lg={24} xl={24} xxl={18}>
-          <Row className="mt-5" gutter={[60]}>
-            <Col xs={24} sm={24} md={24} lg={16} xl={16}>
-              <Location />
-            </Col>
-            <Col xs={24} sm={24} md={24} lg={8} xl={8}>
-              <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
-                <i className="bi bi-geo-alt-fill text-danger fs-5"></i>
-                <strong>{t("contact.address")}</strong>
-              </div>
-              <div className="fade-in-right">{t("contact.addressText")}</div>
-              <hr />
+      <div className="pt-5 contact-wrapper">
+        <Row justify={"center"}>
+          <Col
+            xs={24}
+            sm={24}
+            md={24}
+            lg={16}
+            xl={15}
+            style={{
+              padding: "18px",
+            }}
+          >
+            <Location />
+          </Col>
+          <Col
+            xs={24}
+            sm={24}
+            md={24}
+            lg={8}
+            xl={6}
+            style={{
+              padding: "18px",
+            }}
+          >
+            <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
+              <i className="bi bi-geo-alt-fill text-danger fs-5"></i>
+              <strong>{t("contact.address")}</strong>
+            </div>
+            <div className="fade-in-right">{t("contact.addressText")}</div>
+            <hr />
 
-              <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
-                <i className="bi bi-telephone-fill fs-6"></i>
-                <strong>{t("contact.phone")}</strong>
-              </div>
-              <div className="fade-in-right">
-                <a class="text-decoration-none" href="tel:+998979007707">
-                  +998979007707
-                </a>
-              </div>
-              <hr />
+            <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
+              <i className="bi bi-telephone-fill fs-6"></i>
+              <strong>{t("contact.phone")}</strong>
+            </div>
+            <div className="fade-in-right">
+              <a className="text-decoration-none" href="tel:+998979007707">
+                +998979007707
+              </a>
+            </div>
+            <hr />
 
-              <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
-                <i className="bi bi-envelope-fill fs-6"></i>
-                <strong>{t("contact.email")}</strong>
-              </div>
-              <div className="fade-in-right">
+            <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
+              <i className="bi bi-envelope-fill fs-6"></i>
+              <strong>{t("contact.email")}</strong>
+            </div>
+            <div className="fade-in-right">
+              <a
+                className="text-decoration-none"
+                href="mailto:info@cmrnretail.uz"
+              >
+                info@cmrnretail.uz
+              </a>
+            </div>
+            <hr />
+
+            <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
+              <i className="bi bi-chat-dots-fill fs-6"></i>
+              <strong>{t("contact.messenger")}</strong>
+            </div>
+            <div className="fade-in-right d-flex gap-3">
+              <span>
                 <a
-                  class="text-decoration-none"
-                  href="mailto:info@cmrnretail.uz"
+                  href="https://www.t.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  info@cmrnretail.uz
+                  <i
+                    className="bi bi-telegram fs-3 text-primary"
+                    style={{ cursor: "pointer" }}
+                  ></i>
                 </a>
-              </div>
-              <hr />
-
-              <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
-                <i className="bi bi-chat-dots-fill fs-6"></i>
-                <strong>{t("contact.messenger")}</strong>
-              </div>
-              <div className="fade-in-right d-flex gap-3">
-                <span>
-                  <a
-                    href="https://www.t.me/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i
-                      className="bi bi-telegram fs-3 text-primary"
-                      style={{ cursor: "pointer" }}
-                    ></i>
-                  </a>
-                </span>
-                <span>
-                  <a
-                    href="https://wa.me/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i
-                      className="bi bi-whatsapp fs-3 text-success"
-                      style={{ cursor: "pointer" }}
-                    ></i>
-                  </a>
-                </span>
-              </div>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+              </span>
+              <span>
+                <a
+                  href="https://wa.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    className="bi bi-whatsapp fs-3 text-success"
+                    style={{ cursor: "pointer" }}
+                  ></i>
+                </a>
+              </span>
+            </div>
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 };
+
 export default ContactUs;

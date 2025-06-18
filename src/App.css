@@ -329,3 +329,30 @@ html {
     margin-top: 120px;
   }
 }
+
+.contact-wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .contact-wrapper {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    width: 95%;
+  }
+}
+
+contact-padding {
+  padding: 18px !important;
+}
+
+@media (max-width: 768px) {
+  .contact-padding {
+    padding: 0;
+  }
+}
