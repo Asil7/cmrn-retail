@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import Location from "../components/location/Location";
 import { Row, Col } from "antd";
 
 const ContactUs = () => {
+  const { t } = useTranslation();
+
   return (
     <div style={{ backgroundColor: "#f2eadc" }} className="pb-5">
       <Row justify="center">
@@ -13,17 +16,14 @@ const ContactUs = () => {
             <Col xs={24} sm={24} md={24} lg={8} xl={8}>
               <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-geo-alt-fill text-danger fs-5"></i>
-                <strong>Address :</strong>
+                <strong>{t("contact.address")}</strong>
               </div>
-              <div className="fade-in-right">
-                Uzbekistan, Tashkent, Almazar district, Kushtut MFY, Sagban
-                street 5,6,7
-              </div>
+              <div className="fade-in-right">{t("contact.addressText")}</div>
               <hr />
 
               <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-telephone-fill fs-6"></i>
-                <strong>Phone :</strong>
+                <strong>{t("contact.phone")}</strong>
               </div>
               <div className="fade-in-right">
                 <a class="text-decoration-none" href="tel:+998979007707">
@@ -34,7 +34,7 @@ const ContactUs = () => {
 
               <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-envelope-fill fs-6"></i>
-                <strong>Email :</strong>
+                <strong>{t("contact.email")}</strong>
               </div>
               <div className="fade-in-right">
                 <a
@@ -48,7 +48,7 @@ const ContactUs = () => {
 
               <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-chat-dots-fill fs-6"></i>
-                <strong>Messenger :</strong>
+                <strong>{t("contact.messenger")}</strong>
               </div>
               <div className="fade-in-right d-flex gap-3">
                 <span>

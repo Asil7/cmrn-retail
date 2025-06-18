@@ -1,10 +1,15 @@
 import { Row, Col, Card } from "antd";
-import fruitsData from "../../data/fruitsData";
+import fruitsDataEn from "../../data/fruitsDataEn";
+import fruitsDataRu from "../../data/fruitsDataRu";
 import { useNavigate } from "react-router-dom";
 import "../product/Products.css";
+import { useTranslation } from "react-i18next";
 
 const Products = () => {
   const navigate = useNavigate();
+  const { i18n } = useTranslation();
+  const lang = i18n.language;
+  const fruitsData = lang === "ru" ? fruitsDataRu : fruitsDataEn;
 
   return (
     <div style={{ backgroundColor: "#f2eadc" }}>

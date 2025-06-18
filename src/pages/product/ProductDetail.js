@@ -1,10 +1,16 @@
 import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Row, Col, Carousel } from "antd";
-import fruitsData from "../../data/fruitsData";
+import fruitsDataEn from "../../data/fruitsDataEn";
+import fruitsDataRu from "../../data/fruitsDataRu";
+import { useTranslation } from "react-i18next";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const { i18n } = useTranslation();
+  const lang = i18n.language;
+  const fruitsData = lang === "ru" ? fruitsDataRu : fruitsDataEn;
+
   const product = fruitsData.products.find(
     (fruit) => fruit.id === parseInt(id)
   );
@@ -13,12 +19,14 @@ const ProductDetail = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   if (!product) {
-    return <div>Product not found.</div>;
+    return (
+      <div>{lang === "en" ? "Product not found." : "Товар не найден"}</div>
+    );
   }
 
   const benefits = product.description.characteristics.map((text, index) => ({
     text,
-    icon: product.frame, // using the frame image as icon
+    icon: product.frame,
   }));
 
   return (
@@ -31,13 +39,12 @@ const ProductDetail = () => {
             backgroundColor: "#c4b5a5",
             padding: "20px",
             minHeight: "400px",
-            height: "80vh",
+            height: "75vh",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          {/* Carousel + Thumbnails */}
           <div
             style={{
               display: "flex",
@@ -69,7 +76,6 @@ const ProductDetail = () => {
               </Carousel>
             </div>
 
-            {/* Thumbnails */}
             <div
               style={{
                 display: "flex",
@@ -111,9 +117,16 @@ const ProductDetail = () => {
           }}
         >
           <div>
-            <h6>Fruit</h6>
+            <h6>{lang === "en" ? "Fruit" : "Фрукты"}</h6>
             <hr style={{ width: "50%" }} />
             <h2 style={{ fontSize: "2rem" }}>{product.name}</h2>
+
+            {product.varieties && (
+              <p>
+                {lang === "en" ? "Varieties:" : "Сорта:"}{" "}
+                {product.varieties.join(", ")}
+              </p>
+            )}
 
             <ul style={{ paddingLeft: "20px" }}>
               {benefits.map((benefit, index) => (
@@ -121,14 +134,17 @@ const ProductDetail = () => {
               ))}
             </ul>
 
-            <p>{product.local_name && `Local Name: ${product.local_name}`}</p>
-
-            <h5 style={{ marginTop: "30px" }}>Packaging:</h5>
+            <h5 style={{ marginTop: "30px" }}>
+              {lang === "en" ? "Packaging" : "Упаковка"}
+            </h5>
             <div style={{ marginLeft: "10px", marginTop: "10px" }}>
               <p>{product.description.packaging.types.join(", ")}</p>
-              <p>Weight: {product.description.packaging.weight_range_kg}</p>
+              <p>
+                {lang === "en" ? "Weight:" : "Вес:"}
+                {product.description.packaging.weight_range_kg}
+              </p>
               {product.description.packaging.custom_packaging && (
-                <p>Packaging is made according to customer demands.</p>
+                <p>{product.description.packaging.custom_packaging_value}</p>
               )}
             </div>
           </div>

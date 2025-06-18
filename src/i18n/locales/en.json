@@ -20,6 +20,10 @@
     "ctaButton": "Explore Our Products"
   },
   "contact": {
-    "address": "Address"
+    "address": "Address : ",
+    "addressText": "Uzbekistan, Tashkent, Almazar district, Kushtut MFY, Sagban street 5,6,7",
+    "phone": "Phone :",
+    "email": "Email :",
+    "messenger": "Messenger :"
   }
 }

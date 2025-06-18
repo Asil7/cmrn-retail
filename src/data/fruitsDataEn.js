@@ -10,7 +10,7 @@ const fruitsData = {
     {
       id: 1,
       name: "Apricot",
-      local_name: "SHALAH",
+      varieties: ["SHALAH"],
       photo: [apricot],
       frame: apricotFrame,
       description: {
@@ -19,6 +19,8 @@ const fruitsData = {
           types: ["Plastic boxes", "Carton boxes"],
           weight_range_kg: "6-8 kg",
           custom_packaging: true,
+          custom_packaging_value:
+            "Packaging is made according to customer demands.",
         },
         characteristics: [
           "Large, oval, and slightly flat in shape",
@@ -41,6 +43,8 @@ const fruitsData = {
           types: ["Plastic boxes", "Carton boxes"],
           weight_range_kg: "5-7 kg",
           custom_packaging: true,
+          custom_packaging_value:
+            "Packaging is made according to customer demands.",
         },
         characteristics: [
           "Large, firm, juicy sweet, and bordeaux color",
@@ -54,7 +58,7 @@ const fruitsData = {
     {
       id: 3,
       name: "Nectarine",
-      variety: "OCTOBER",
+      varieties: ["OCTOBER"],
       photo: [nectarine],
       frame: nectarineFrame,
       description: {
@@ -63,6 +67,8 @@ const fruitsData = {
           types: ["Plastic box"],
           weight_range_kg: "7-10 kg",
           custom_packaging: true,
+          custom_packaging_value:
+            "Packaging is made according to customer demands.",
         },
         characteristics: [
           "Nectarine Luciana are rounded and smooth in shape",

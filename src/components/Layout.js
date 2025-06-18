@@ -50,6 +50,15 @@ const getHeightForPath = (path) => {
   }
 };
 
+const getPageTitle = (path, t) => {
+  if (path === "/") return t("navigator.home");
+  if (path === "/about") return t("navigator.about");
+  if (path === "/products") return t("navigator.products");
+  if (path === "/contact") return t("navigator.contact");
+  if (path.startsWith("/products/")) return t("navigator.productDetails");
+  return "";
+};
+
 const imagesToPreload = [apricotOrchard, fruit, headproductbackground];
 
 export default function AppLayout({ children }) {
@@ -67,7 +76,7 @@ export default function AppLayout({ children }) {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -113,6 +122,22 @@ export default function AppLayout({ children }) {
               pointerEvents: "none",
             }}
           />
+
+          <div
+            style={{
+              position: "absolute",
+              bottom: "20px",
+              left: "20%",
+              color: "white",
+              zIndex: 2,
+              fontSize: "32px",
+              fontWeight: "bold",
+              textShadow: "1px 1px 4px rgba(0,0,0,0.7)",
+            }}
+          >
+            {getPageTitle(location.pathname, t)}
+          </div>
+
           {!isMobile && (
             <>
               <Affix
@@ -183,8 +208,8 @@ export default function AppLayout({ children }) {
                   onClick={() => setDrawerVisible(true)}
                   style={{
                     position: "fixed",
-                    top: 16,
-                    right: 16,
+                    top: 20,
+                    right: 20,
                     zIndex: 1000,
                     backgroundColor: "rgba(0,0,0,0.4)",
                     border: "none",
