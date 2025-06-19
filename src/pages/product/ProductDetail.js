@@ -6,6 +6,7 @@ import fruitsDataRu from "../../data/fruitsDataRu";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import { LeftOutlined } from "@ant-design/icons";
+import ProductMonthCard from "./ProductMonthCard";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -172,6 +173,10 @@ const ProductDetail = () => {
           </div>
         </Col>
       </Row>
+
+      <div>
+        <ProductMonthCard product={product} />
+      </div>
     </div>
   );
 };
