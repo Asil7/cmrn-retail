@@ -14,11 +14,7 @@ import {
 } from "antd";
 import { useEffect, useState } from "react";
 import { Footer } from "antd/es/layout/layout";
-import {
-  DownOutlined,
-  MenuOutlined,
-  WhatsAppOutlined,
-} from "@ant-design/icons";
+import { DownOutlined, MenuOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 
 const { Header, Content } = Layout;
