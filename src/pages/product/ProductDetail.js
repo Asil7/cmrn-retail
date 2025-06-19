@@ -1,15 +1,19 @@
 import React, { useRef, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Row, Col, Carousel } from "antd";
+import { Link, useParams } from "react-router-dom";
+import { Row, Col, Carousel, Button } from "antd";
 import fruitsDataEn from "../../data/fruitsDataEn";
 import fruitsDataRu from "../../data/fruitsDataRu";
 import { useTranslation } from "react-i18next";
+import { useMediaQuery } from "react-responsive";
+import { LeftOutlined } from "@ant-design/icons";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { i18n } = useTranslation();
   const lang = i18n.language;
+  const { t } = useTranslation();
   const fruitsData = lang === "ru" ? fruitsDataRu : fruitsDataEn;
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const product = fruitsData.products.find(
     (fruit) => fruit.id === parseInt(id)
@@ -39,7 +43,7 @@ const ProductDetail = () => {
             backgroundColor: "#c4b5a5",
             padding: "20px",
             minHeight: "400px",
-            height: "75vh",
+            height: isMobile ? "65vh" : "75vh",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -97,7 +101,7 @@ const ProductDetail = () => {
                     objectFit: "cover",
                     border:
                       currentSlide === index
-                        ? "2px solid #1890ff"
+                        ? "2px solid #ed6f01"
                         : "1px solid #ccc",
                     cursor: "pointer",
                     borderRadius: "4px",
@@ -108,11 +112,28 @@ const ProductDetail = () => {
           </div>
         </Col>
 
+        {isMobile && (
+          <div
+            style={{
+              paddingTop: "20px",
+              backgroundColor: "#f2eadc",
+              width: "100%",
+            }}
+          >
+            <Link to="/products">
+              <Button type="link" style={{ color: "#ed6f01" }}>
+                <LeftOutlined />
+                {t("navigator.products")}
+              </Button>
+            </Link>
+          </div>
+        )}
+
         <Col
           xs={24}
           md={12}
           style={{
-            padding: "60px 70px",
+            padding: isMobile ? "15px 70px" : "60px 70px",
             backgroundColor: "#f2eadc",
           }}
         >

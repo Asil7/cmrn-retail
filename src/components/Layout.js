@@ -14,7 +14,11 @@ import {
 } from "antd";
 import { useEffect, useState } from "react";
 import { Footer } from "antd/es/layout/layout";
-import { DownOutlined, MenuOutlined } from "@ant-design/icons";
+import {
+  DownOutlined,
+  MenuOutlined,
+  WhatsAppOutlined,
+} from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 
 const { Header, Content } = Layout;
@@ -136,6 +140,7 @@ export default function AppLayout({ children }) {
           />
 
           <div
+            key={location.pathname}
             style={{
               position: "absolute",
               bottom: "80px",
@@ -146,6 +151,7 @@ export default function AppLayout({ children }) {
               fontWeight: "bold",
               textShadow: "1px 1px 4px rgba(0,0,0,0.7)",
             }}
+            className="fade-in-right"
           >
             {getPageTitle(location.pathname, t)}
           </div>
@@ -210,6 +216,7 @@ export default function AppLayout({ children }) {
                         borderLeft: isAffixed
                           ? "1px solid gray"
                           : "1px solid white",
+                        cursor: "pointer",
                       }}
                     >
                       <strong>
@@ -264,18 +271,21 @@ export default function AppLayout({ children }) {
                     }}
                   >
                     <span className="ms-2">CMRN RETAIL LLC</span>
-                    <div style={{ display: "flex", gap: 8 }}>
+                    <div
+                      style={{ display: "flex", gap: 8 }}
+                      className="fade-in-right"
+                    >
                       <Button
                         size="small"
                         onClick={() => i18n.changeLanguage("en")}
                       >
-                        🇬🇧 En
+                        🇬🇧 EN
                       </Button>
                       <Button
                         size="small"
                         onClick={() => i18n.changeLanguage("ru")}
                       >
-                        🇷🇺 Ru
+                        🇷🇺 RU
                       </Button>
                     </div>
                   </div>
@@ -302,6 +312,26 @@ export default function AppLayout({ children }) {
                     <Link to="/contact">{t("navigator.contact")}</Link>
                   </Menu.Item>
                 </Menu>
+
+                <div
+                  style={{
+                    marginBottom: 40,
+                    bottom: 0,
+                    position: "absolute",
+                    fontSize: 14,
+                    color: "#888",
+                  }}
+                >
+                  <div className="mb-4">
+                    <Button className="m-2" size="large" shape="circle">
+                      <i className="bi bi-telegram"></i>
+                    </Button>
+                    <Button className="m-2" size="large" shape="circle">
+                      <i className="bi bi-whatsapp"></i>
+                    </Button>
+                  </div>
+                  <div>© 2025 CMRN RETAIL LLC. All rights reserved.</div>
+                </div>
               </Drawer>
             </>
           )}

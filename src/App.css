@@ -57,9 +57,10 @@ html {
 @media (max-width: 768px) {
   .ant-menu-light .ant-menu-item a,
   .ant-menu-light > .ant-menu .ant-menu-item a {
-    color: #000 !important;
+    color: #6c757d !important;
     font-size: 20px;
     margin-left: 20px;
+    font-weight: 300;
   }
 }
 
@@ -335,24 +336,40 @@ html {
   margin: 0 auto;
 }
 
-@media (max-width: 1200px) {
-  .contact-wrapper {
-    width: 90%;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1600px) {
   .contact-wrapper {
     width: 95%;
   }
 }
 
-contact-padding {
+@media (max-width: 1200px) {
+  .contact-wrapper {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    width: 94%;
+  }
+}
+
+.contact-location-padding {
   padding: 18px !important;
 }
 
 @media (max-width: 768px) {
-  .contact-padding {
-    padding: 0;
+  .contact-location-padding {
+    padding: 0 !important;
+  }
+}
+
+.contact-info-padding {
+  padding: 18px !important;
+}
+
+@media (max-width: 768px) {
+  .contact-info-padding {
+    padding: 10px !important;
   }
 }

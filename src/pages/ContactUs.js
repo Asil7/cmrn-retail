@@ -1,9 +1,12 @@
 import { useTranslation } from "react-i18next";
 import Location from "../components/location/Location";
 import { Row, Col } from "antd";
+import { useMediaQuery } from "react-responsive";
+import LocationMobile from "../components/location/LocationMobile";
 
 const ContactUs = () => {
   const { t } = useTranslation();
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
     <div style={{ backgroundColor: "#f2eadc" }} className="pb-5">
@@ -15,11 +18,9 @@ const ContactUs = () => {
             md={24}
             lg={16}
             xl={15}
-            style={{
-              padding: "18px",
-            }}
+            className="contact-location-padding"
           >
-            <Location />
+            {isMobile ? <LocationMobile /> : <Location />}
           </Col>
           <Col
             xs={24}
@@ -27,9 +28,7 @@ const ContactUs = () => {
             md={24}
             lg={8}
             xl={6}
-            style={{
-              padding: "18px",
-            }}
+            className="contact-info-padding"
           >
             <div className="fade-in-left mb-2 d-flex align-items-center gap-2">
               <i className="bi bi-geo-alt-fill text-danger fs-5"></i>
