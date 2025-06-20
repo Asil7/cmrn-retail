@@ -91,11 +91,27 @@ export default function AppLayout({ children }) {
   const menuItems = [
     {
       key: "en",
-      label: "🇬🇧 EN",
+      label: (
+        <>
+          <span
+            className="flag-icon flag-icon-gb"
+            style={{ marginRight: 6 }}
+          ></span>
+          EN
+        </>
+      ),
     },
     {
       key: "ru",
-      label: "🇷🇺 RU",
+      label: (
+        <>
+          <span
+            className="flag-icon flag-icon-ru"
+            style={{ marginRight: 6 }}
+          ></span>
+          RU
+        </>
+      ),
     },
   ];
 
@@ -275,13 +291,13 @@ export default function AppLayout({ children }) {
                         size="small"
                         onClick={() => i18n.changeLanguage("en")}
                       >
-                        🇬🇧 EN
+                        <span className="flag-icon flag-icon-gb"></span> EN
                       </Button>
                       <Button
                         size="small"
                         onClick={() => i18n.changeLanguage("ru")}
                       >
-                        🇷🇺 RU
+                        <span className="flag-icon flag-icon-ru"></span> RU
                       </Button>
                     </div>
                   </div>

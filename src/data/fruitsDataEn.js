@@ -14,7 +14,7 @@ const fruitsData = {
       photo: [apricot],
       frame: apricotFrame,
       description: {
-        season: "May to June",
+        season: ["MAY", "JUN"],
         packaging: {
           types: ["Plastic boxes", "Carton boxes"],
           weight_range_kg: "6-8 kg",
@@ -38,7 +38,7 @@ const fruitsData = {
       photo: [cherry, nectarine],
       frame: cherryFrame,
       description: {
-        season: "May to July",
+        season: ["MAY", "JUN", "JUL"],
         packaging: {
           types: ["Plastic boxes", "Carton boxes"],
           weight_range_kg: "5-7 kg",
@@ -62,7 +62,7 @@ const fruitsData = {
       photo: [nectarine],
       frame: nectarineFrame,
       description: {
-        season: "August – September",
+        season: ["AUG", "SEP"],
         packaging: {
           types: ["Plastic box"],
           weight_range_kg: "7-10 kg",

@@ -174,7 +174,26 @@ const ProductDetail = () => {
         </Col>
       </Row>
 
-      <div>
+      <div className="product-calendar-container">
+        <Row
+          style={{
+            margin: "40px 15px 40px 15px",
+          }}
+        >
+          <Col xs={24} sm={24} md={10} lg={10} xl={8}>
+            <h2>Product Calendar</h2>
+          </Col>
+          <Col xs={24} sm={24} md={24} lg={14} xl={14}>
+            <hr
+              style={{
+                height: "2px",
+                backgroundColor: "#000000",
+                borderWidth: "0",
+              }}
+            />
+          </Col>
+        </Row>
+
         <ProductMonthCard product={product} />
       </div>
     </div>
