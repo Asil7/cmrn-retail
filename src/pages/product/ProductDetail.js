@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import { LeftOutlined } from "@ant-design/icons";
 import ProductMonthCard from "./ProductMonthCard";
+import useInView from "../../components/useInView";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -15,6 +16,7 @@ const ProductDetail = () => {
   const { t } = useTranslation();
   const fruitsData = lang === "ru" ? fruitsDataRu : fruitsDataEn;
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [ref, isVisible] = useInView();
 
   const product = fruitsData.products.find(
     (fruit) => fruit.id === parseInt(id)
@@ -134,13 +136,13 @@ const ProductDetail = () => {
           xs={24}
           md={12}
           style={{
-            padding: isMobile ? "15px 70px" : "60px 70px",
+            padding: isMobile ? "15px 40px" : "60px 70px",
             backgroundColor: "#f2eadc",
           }}
         >
           <div>
             <h6>{lang === "ru" ? "Фрукты" : "Fruit"}</h6>
-            <hr style={{ width: "50%" }} />
+            <hr style={{ width: isMobile ? "70%" : "50%" }} />
             <br />
             <h2 style={{ fontSize: "2rem" }}>{product.name}</h2>
 
@@ -174,14 +176,15 @@ const ProductDetail = () => {
         </Col>
       </Row>
 
-      <div className="product-calendar-container">
+      <div className="product-calendar-container" ref={ref}>
         <Row
+          className="fade-in-down"
           style={{
             margin: "40px 15px 40px 15px",
           }}
         >
           <Col xs={24} sm={24} md={10} lg={10} xl={8}>
-            <h2>Product Calendar</h2>
+            <h2>{lang === "en" ? "Product Calendar" : "Календарь продукта"}</h2>
           </Col>
           <Col xs={24} sm={24} md={24} lg={14} xl={14}>
             <hr

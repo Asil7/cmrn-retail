@@ -17,7 +17,7 @@ const fruitsData = {
         season: ["МАЙ", "ИЮН"],
         packaging: {
           types: ["Пластиковые ящики", "Картонные коробки"],
-          weight_range_kg: "6-8 kg",
+          weight_range_kg: "6-8 кг",
           custom_packaging: true,
           custom_packaging_value:
             "Упаковка может быть выполнена в соответствии с требованиями клиента.",
@@ -41,7 +41,7 @@ const fruitsData = {
         season: ["МАЙ", "ИЮН", "ИЮЛ"],
         packaging: {
           types: ["Пластиковые ящики", "Картонные коробки"],
-          weight_range_kg: "5-7 kg",
+          weight_range_kg: "5-7 кг",
           custom_packaging: true,
           custom_packaging_value:
             "Упаковка может быть выполнена в соответствии с требованиями клиента.",
@@ -65,7 +65,7 @@ const fruitsData = {
         season: ["АВГ", "СЕН"],
         packaging: {
           types: ["Пластиковые ящики"],
-          weight_range_kg: "7-10 kg",
+          weight_range_kg: "7-10 кг",
           custom_packaging: true,
           custom_packaging_value:
             "Упаковка может быть выполнена в соответствии с требованиями клиента.",
